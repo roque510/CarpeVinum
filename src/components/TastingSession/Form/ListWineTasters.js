@@ -14,6 +14,7 @@ const ListWineTasters = props => {
 
         return (
           <select
+          class="form-control"
             onChange={e => {
               props.addWineTaster({
                 variables: {
