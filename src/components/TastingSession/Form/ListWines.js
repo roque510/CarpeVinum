@@ -13,7 +13,7 @@ const ListWines = props => {
         const { wines } = data;
 
         return (
-          <select
+          <select class="form-control"
             onChange={e => {
               props.childCB
                 ? props.childCB(wines[e.target.options.selectedIndex - 1].id)
@@ -27,13 +27,13 @@ const ListWines = props => {
             <option value="default" disabled hidden>
               {props.placeholder}
             </option>
-            {wines.map((wine, i) => {
+            {wines?wines.map((wine, i) => {
               return (
                 <option key={`wine${i}`} value={wine.id}>
                   {wine.name}
                 </option>
               );
-            })}
+            }):""}
           </select>
         );
       }}

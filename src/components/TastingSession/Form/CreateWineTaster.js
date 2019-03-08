@@ -36,8 +36,8 @@ class CreateWineTaster extends Component {
       favouriteWine,
     } = this.state;
     return (
-      <div>
-        <button onClick={this.toggle}>Create New Wine Taster</button>
+      <div style={{marginTop:"10px"}}>
+        <button class="btn btn-outline-primary outline" onClick={this.toggle}>Create New Wine Taster</button>
 
         {isOpen ? (
           <div

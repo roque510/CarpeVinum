@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Mutation } from "react-apollo";
+import { Link } from "react-router-dom";
 
 import CreateTastingSession from "./Form/CreateTastingSession";
 
@@ -35,13 +36,19 @@ class Home extends Component {
             });
           }}
         >
-          {postMutation => (
-            <button onClick={isOpen ? null : postMutation}>
-              Create New Tasting Session
-            </button>
-          )}
-        </Mutation>
-        {isOpen ? <CreateTastingSession toggle={this.toggle} /> : null}
+              {postMutation => (
+              <div className="d-inline-flex p-2 bd-highlight" >
+                <div className="card" style={{width: "18rem"}}>
+                  <img src="/assets/img/tastesession.png" className="card-img-top" alt="..." />
+                  <div className="card-body">
+                    <h5 className="card-title">Create New</h5>
+                    <p className="card-text">Tasting Session</p>
+                    <Link to="tastingSession" className="btn btn-primary" onClick={isOpen ? null : postMutation} >Start</Link>
+                  </div>
+                </div>                
+            </div>
+                )}
+        </Mutation>        
       </React.Fragment>
     );
   }
